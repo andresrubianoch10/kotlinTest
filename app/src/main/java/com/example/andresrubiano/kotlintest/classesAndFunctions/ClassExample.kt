@@ -1,6 +1,7 @@
 package com.example.andresrubiano.kotlintest.classesAndFunctions
 
 import android.util.Log
+import android.widget.Toast
 
 /**
  * Every class extends from <b>Any</b> (Similar to Object in JAVA).
@@ -63,7 +64,7 @@ class ClassExample {
     /**
      * Using methods
      */
-    open class SumClass(x: Int, y: Int) {
+    inner class SumClass(x: Int, y: Int) {
 
         init {
             val total = sumValues(x, y)
@@ -72,6 +73,13 @@ class ClassExample {
 
         fun sumValues(x: Int, y: Int) : Int {
             return x + y
+        }
+
+        fun substraction(x: Int, y: Int) : Int = x + y
+
+        fun messageToast(message: String, length: Int = Toast.LENGTH_SHORT) {
+            //TODO find our a way to use context in an inner class
+            //Toast.makeText(, message, length)
         }
     }
 
